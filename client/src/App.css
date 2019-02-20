@@ -22,6 +22,9 @@
 .App-link {
   color: #61dafb;
 }
+.HomeHeader{
+  color: blue;
+}
 
 @keyframes App-logo-spin {
   from {
