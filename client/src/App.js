@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Homepage from './components/Homepage'
+import LandingPage from './components/LandingPage'
 
 class App extends Component {
   render() {
     return (
-      <Homepage />
+      <div className="pageborder">
+      <LandingPage />
+      </div>
     );
   }
 }

@@ -1,11 +1,13 @@
 const express = require('express')
 const app = express()
+const routes = require('./routes/index')
 
-app.use(express.static(__dirname + '/client/build/'))
+app.use(express.static(__dirname + '/client/public/'))
 
 app.get('/', (req, res) => {
-res.sendFile(__dirname + '/client/build/index.html')
+res.sendFile(__dirname + '/client/public/index.html')
 })
+app.use('/', routes)
 
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
