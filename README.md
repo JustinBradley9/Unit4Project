@@ -16,7 +16,7 @@
 # Links 
 - Heroku: https://young-shelf-27225.herokuapp.com/
 - Trello Board: https://trello.com/b/JUpZsaDg/unit-4-project
-- Erd and basic layout: 
+- Erd and basic layout: https://www.instagram.com/p/Buc-LEAghpc/?utm_source=ig_share_sheet&igshid=1u8avxflowkh7
 
 # User Story
 - User visits landing page
