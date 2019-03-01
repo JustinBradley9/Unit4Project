@@ -9,27 +9,43 @@ import { Link } from 'react-router-dom'
 class LandingPage extends Component {
 
     state = {
-        guilds: [{}],
+        guilds: [],
     }
 
     componentDidMount() {
         this.getAllUsers()
     }
 
-    getAllUsers = () => {
-        axios.get(`http://localhost:3001/api/guilds`)
-        .then((res) => this.setState({ guilds: res.data }))
-    }
+    // getAllUsers = () => {
+    //     console.log('hello')
+    //     axios.get('/api/guilds')
+    //     .then((res) => {
+    //         console.log("YOUR DATA: " + JSON.stringify(res.data))
+    //         this.setState({ guilds: res.data }) 
+    //     })
+    // }
+
+    getAllUsers = async () => {
+        const res = await axios.get('/api/guilds')
+        const data =  res.data
+        console.log(data)
+        this.setState({guilds: data})
+    }   
 
     render() {
+
+       const guilds =  this.state.guilds.map((guild, i) => {
+           return (
+               <div key={i}>
+                   <Link to={`/guilds/${guild._id}`}><h3>{guild.guildName}</h3></Link>
+               </div>
+           )
+       })
+
         return (
             <div >
                 <h1>Guilds Available</h1>
-                {this.state.guilds.map((guild, i) => (
-                    <div key={i}>
-                        <Link to={`/guild/${guild._id}`}><h3>{guild.guildName}</h3></Link>
-                    </div>
-                ))}
+                {guilds}
             </div>
         );
     }

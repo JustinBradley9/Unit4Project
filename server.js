@@ -3,9 +3,11 @@ const app = express()
 const routes = require('./routes/index')
 
 app.use(express.static(__dirname + '/client/public/'))
-
+// app.use(express.static(__dirname + '/client/build/'))
+// app.use(express.urlencoded({ extended:true }))
+// app.use(express.json())
 app.get('/', (req, res) => {
-res.sendFile(__dirname + '/client/public/index.html')
+res.sendFile(__dirname + '/client/build/index.html')
 })
 app.use('/', routes)
 

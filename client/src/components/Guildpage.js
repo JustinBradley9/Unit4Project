@@ -7,8 +7,6 @@ class Homepage extends Component {
         return (
             <div>
             <h1 className="HomeHeader">Does this component work?</h1>
-
-
             </div>
         );
     }
